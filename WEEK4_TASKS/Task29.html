@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevent Form Submission Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            margin: 20px;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prevent Form Submission</h1>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const myForm = document.getElementById('myForm');
+
+        myForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the default form submission
+            console.log('Form submitted!'); // Log the message to the console
+        });
+    </script>
+</body>
+</html>

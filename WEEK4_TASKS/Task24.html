@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Attribute Change</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin: 20px;
+        }
+        input {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Form Example</h1>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="email" id="email" placeholder="Enter your email">
+        <input type="password" id="password" placeholder="Enter your password">
+        <button type="button" id="changeAttributesButton">Change Placeholders</button>
+    </form>
+
+    <script>
+        const changeAttributesButton = document.getElementById('changeAttributesButton');
+
+        changeAttributesButton.addEventListener('click', () => {
+            // Change the placeholder attributes of input fields
+            document.getElementById('name').setAttribute('placeholder', 'Your full name');
+            document.getElementById('email').setAttribute('placeholder', 'example@example.com');
+            document.getElementById('password').setAttribute('placeholder', 'Create a secure password');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Class Toggle Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .normal {
+            background-color: #007BFF;
+            color: white;
+        }
+        .hovered {
+            background-color: #0056b3;
+        }
+        .active {
+            background-color: #28a745;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>Toggle Button Classes</h1>
+    <button id="toggleButton" class="normal">Click Me!</button>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+
+        toggleButton.addEventListener('click', () => {
+            toggleButton.classList.toggle('active');
+
+            if (toggleButton.classList.contains('active')) {
+                toggleButton.textContent = 'Active State';
+            } else {
+                toggleButton.textContent = 'Click Me!';
+            }
+        });
+
+        toggleButton.addEventListener('mouseover', () => {
+            toggleButton.classList.add('hovered');
+        });
+
+        toggleButton.addEventListener('mouseout', () => {
+            toggleButton.classList.remove('hovered');
+        });
+    </script>
+</body>
+</html>

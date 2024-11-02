@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Content Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #message {
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulate Text Content</h1>
+    <div id="message">This is the original text content.</div>
+    <button id="changeTextButton">Change Text</button>
+
+    <script>
+        const changeTextButton = document.getElementById('changeTextButton');
+
+        changeTextButton.addEventListener('click', () => {
+            // Change text content using innerHTML
+            // document.getElementById('message').innerHTML = 'The text has been changed using innerHTML!';
+
+            // Change text content using textContent
+            document.getElementById('message').textContent = 'The text has been changed using textContent!';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone List Item Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            background-color: #f0f8ff;
+            margin: 5px 0;
+            border: 1px solid #add8e6;
+        }
+        button {
+            padding: 10px 15px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clone List Item</h1>
+    <ul id="myList">
+        <li id="item1">List Item 1</li>
+        <li id="item2">List Item 2</li>
+        <li id="item3">List Item 3</li>
+    </ul>
+    <button id="cloneButton">Clone List Item 1</button>
+
+    <script>
+        const cloneButton = document.getElementById('cloneButton');
+
+        cloneButton.addEventListener('click', () => {
+            const originalItem = document.getElementById('item1');
+            const clonedItem = originalItem.cloneNode(true); // Clone the list item
+            document.getElementById('myList').appendChild(clonedItem); // Append the cloned item to the list
+        });
+    </script>
+</body>
+</html>

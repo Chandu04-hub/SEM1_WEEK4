@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Traversal Example</title>
+</head>
+<body>
+    <h1>DOM Traversal Example</h1>
+    <ul>
+        <li>Item 1
+            <ul>
+                <li>Subitem 1.1</li>
+                <li>Subitem 1.2</li>
+            </ul>
+        </li>
+        <li>Item 2
+            <ul>
+                <li>Subitem 2.1</li>
+                <li>Subitem 2.2</li>
+            </ul>
+        </li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        const listItems = document.querySelectorAll('li');
+
+        listItems.forEach(item => {
+            console.log('Node Name of List Item:', item.nodeName); // Logs the node name of the <li>
+
+            // Log the parent node
+            const parent = item.parentNode;
+            console.log('Node Name of Parent:', parent.nodeName); // Logs the node name of the parent (<ul> or <li>)
+
+            // Log child nodes
+            const children = item.childNodes; // Includes text nodes as well
+            children.forEach(child => {
+                if (child.nodeType === Node.ELEMENT_NODE) { // Check if the child is an element node
+                    console.log('Node Name of Child:', child.nodeName); // Logs the node name of child elements
+                }
+            });
+
+            console.log('---'); // Separator for better readability in console
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selection Example</title>
+</head>
+<body>
+    <h1 id="main-title">Welcome to My Webpage</h1>
+    <p class="description">This is a simple description paragraph.</p>
+    <p class="description">This is another description paragraph.</p>
+    <div class="content">
+        <p>This is a paragraph inside a div.</p>
+    </div>
+    <ul>
+        <li class="list-item">Item 1</li>
+        <li class="list-item">Item 2</li>
+        <li class="list-item">Item 3</li>
+    </ul>
+
+    <script>
+        // Select by ID
+        const titleElement = document.getElementById('main-title');
+        console.log('Selected by ID:', titleElement);
+
+        // Select by class
+        const descriptionElements = document.getElementsByClassName('description');
+        console.log('Selected by Class:', descriptionElements);
+
+        // Select by tag name
+        const listItems = document.getElementsByTagName('li');
+        console.log('Selected by Tag Name:', listItems);
+    </script>
+</body>
+</html>
